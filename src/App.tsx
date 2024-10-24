@@ -1,12 +1,15 @@
+// src/App.tsx
+import React from 'react';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
+const App: React.FC = () => {
+    return (
+        <div>
+            <Navbar />
+            <Home />
+        </div>
+    );
+};
 
-function App() {
-
-  return (
-    <>
-     App
-    </>
-  )
-}
-
-export default App
+export default App;
