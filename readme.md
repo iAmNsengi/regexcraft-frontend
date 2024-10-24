@@ -94,8 +94,7 @@ To set up the project, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd aisfm-project
+   git clone <repository-url> .
    ```
 
 2. **Install dependencies**:
