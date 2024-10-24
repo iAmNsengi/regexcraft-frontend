@@ -2,6 +2,9 @@
   "name": "aisfm",
   "private": true,
   "version": "0.0.0",
+  "description": "The African International Short Film Market (AISFM) connects African short films with global audiences, providing opportunities for filmmakers, distributors, and buyers to connect both digitally and physically.",
+  "author": "Eliezer Nsengi iamnsengi@icloud.com",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
