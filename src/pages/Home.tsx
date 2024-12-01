@@ -1,3 +1,5 @@
+import CodeBlock from "../components/CodeBlock";
+
 const Home = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -26,21 +28,18 @@ const Home = () => {
         To install RegexCraft, you can use npm or yarn. Run one of the following
         commands in your project directory:
       </p>
-      <pre className="bg-gray-100 p-4 rounded-md mb-4">
-        <code>npm install regexcraft</code>
-      </pre>
-      <pre className="bg-gray-100 p-4 rounded-md mb-4">
-        <code>yarn add regexcraft</code>
-      </pre>
+      <CodeBlock code={`npm install regexcraft`} language="bash" />
+      <p className="py-2">or if you use yarn:</p>
+      <CodeBlock code={`yarn add regexcraft`} language="bash" />
 
-      <h2 className="text-2xl font-semibold mb-4">Getting Started</h2>
+      <h2 className="text-2xl font-semibold mb-4 py-4">Getting Started</h2>
       <p className="mb-4">
         After installation, you can start using RegexCraft in your project.
         Here’s a quick example:
       </p>
-      <pre className="bg-gray-100 p-4 rounded-md mb-4">
-        <code>
-          {`import RegexCraft from 'regexcraft';
+      <CodeBlock
+        code={`
+import RegexCraft from 'regexcraft';
 
 const validator = new RegexCraft()
   .hasMinLength(8)
@@ -50,10 +49,10 @@ const validator = new RegexCraft()
 
 console.log(validator); // { value: 'MyPassword1!', isValid: true, failedRequirements: [] }
 `}
-        </code>
-      </pre>
+        language="typescript"
+      />
 
-      <h2 className="text-2xl font-semibold mb-4">Learn More</h2>
+      <h2 className="text-2xl font-semibold mb-4 py-2">Learn More</h2>
       <p>
         Explore the{" "}
         <a href="/examples" className="text-blue-500 underline">
