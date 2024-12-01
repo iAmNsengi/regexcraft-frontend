@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="flex items-center overflow-x-scroll md:flex-col md:space-y-4 ">
+    <nav className="flex items-center overflow-x-scroll md:overflow-hidden md:flex-col md:space-y-4 ">
       <NavLink
         to="/"
         className="px-1 md:px-4 py-2 rounded-md hover:bg-gray-200"
