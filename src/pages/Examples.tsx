@@ -14,8 +14,7 @@ const PasswordValidator = () => {
 
   // Initialize RegexCraft with the "high" password preset
   const validator = new RegexCraft().usePreset("password", "high");
-  console.log(validator);
-
+ 
   // Use testOne for individual password strings
   const isValid = validator.testOne(password);
 
@@ -27,8 +26,6 @@ const PasswordValidator = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter password"
       />
-      
-      <p>{isValid.isValid ? "Valid Password" : "Invalid Password"}</p>
       {!isValid.isValid && (
         <ul>
           {isValid.failedRequirements.map((req, index) => (
