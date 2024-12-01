@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// src/pages/Playground/Playground.tsx
 import { useState } from "react";
 import RegexCraft from "regexcraft";
 
 const Playground = () => {
   const [input, setInput] = useState("");
   const [validationRules, setValidationRules] = useState<string[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [result, setResult] = useState<any>(null);
 
   const validateInput = () => {
@@ -22,6 +23,27 @@ const Playground = () => {
         case "password":
           validator.usePreset("password", "medium");
           break;
+        case "minLength":
+          validator.hasMinLength(8);
+          break;
+        case "maxLength":
+          validator.hasMaxLength(10);
+          break;
+        case "exactLength":
+          validator.hasExactLength(5);
+          break;
+        case "upperCase":
+          validator.hasUpperCase(1);
+          break;
+        case "lowerCase":
+          validator.hasLowerCase(1);
+          break;
+        case "number":
+          validator.hasNumber(1);
+          break;
+        case "specialCharacter":
+          validator.hasSpecialCharacter(1);
+          break;
         // Add more cases as needed
       }
     });
@@ -38,7 +60,18 @@ const Playground = () => {
         <div>
           <h2 className="text-xl font-semibold mb-4">Validation Rules</h2>
           <div className="space-y-2">
-            {["email", "phone", "password"].map((rule) => (
+            {[
+              "email",
+              "phone",
+              "password",
+              "minLength",
+              "maxLength",
+              "exactLength",
+              "upperCase",
+              "lowerCase",
+              "number",
+              "specialCharacter",
+            ].map((rule) => (
               <label key={rule} className="flex items-center space-x-2">
                 <input
                   type="checkbox"
