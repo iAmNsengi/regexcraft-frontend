@@ -1,6 +1,6 @@
-// src/components/CodeBlock/CodeBlock.tsx
 import { Highlight } from "prism-react-renderer";
 // import themes from "prism-react-renderer/dist/index";
+import { useState } from "react";
 
 interface CodeBlockProps {
   code: string;
@@ -13,11 +13,14 @@ const CodeBlock = ({
   language = "typescript",
   showLineNumbers = true,
 }: CodeBlockProps) => {
+  const [buttonText, setButtonText] = useState("Copy");
+
   const copyToClipboard = () => {
     navigator.clipboard
       .writeText(code.trim())
       .then(() => {
-        alert("Code copied to clipboard!");
+        setButtonText("Copied ✅");
+        setTimeout(() => setButtonText("Copy"), 5000);
       })
       .catch((err) => {
         console.error("Failed to copy: ", err);
@@ -30,7 +33,7 @@ const CodeBlock = ({
         onClick={copyToClipboard}
         className="absolute top-2 right-2 p-1 bg-blue-500 text-white rounded text-xs"
       >
-        Copy
+        {buttonText}
       </button>
       <Highlight
         // theme={themes.themes.nightOwl}
