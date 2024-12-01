@@ -1,29 +1,66 @@
 const Home = () => {
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-8">RegexCraft 🛠️</h1>
-      <div className="prose prose-lg">
-        <p className="text-lg text-gray-600">
-          A powerful utility class for building and managing regular expressions
-          with a fluent, chainable API.
-        </p>
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-4xl font-bold mb-4">Welcome to RegexCraft 🛠️</h1>
+      <p className="text-lg text-gray-700 mb-6">
+        RegexCraft is a powerful utility class for building and managing regular
+        expressions with a fluent, chainable API.
+      </p>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <h2 className="text-xl font-semibold mb-4">Easy to Use</h2>
-            <p className="text-gray-600">
-              Build complex regex patterns with a simple, chainable API.
-            </p>
-          </div>
+      <h2 className="text-2xl font-semibold mb-4">Features</h2>
+      <ul className="list-disc list-inside mb-6">
+        <li>🔗 Chainable API for building complex patterns</li>
+        <li>📝 Built-in validation presets for common use cases</li>
+        <li>🎯 Custom error messages for each validation rule</li>
+        <li>📱 Phone number validation for multiple countries</li>
+        <li>🔒 Password strength validation</li>
+        <li>👤 Username format validation</li>
+        <li>🌐 URL and email validation</li>
+        <li>📅 Date validation</li>
+        <li>🔍 Visualization of regex patterns and requirements</li>
+        <li>🛠️ Easy integration with forms and validation libraries</li>
+      </ul>
 
-          <div className="p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <h2 className="text-xl font-semibold mb-4">Powerful Features</h2>
-            <p className="text-gray-600">
-              Validation presets, phone numbers, passwords, and more.
-            </p>
-          </div>
-        </div>
-      </div>
+      <h2 className="text-2xl font-semibold mb-4">Installation</h2>
+      <p className="mb-4">
+        To install RegexCraft, you can use npm or yarn. Run one of the following
+        commands in your project directory:
+      </p>
+      <pre className="bg-gray-100 p-4 rounded-md mb-4">
+        <code>npm install regexcraft</code>
+      </pre>
+      <pre className="bg-gray-100 p-4 rounded-md mb-4">
+        <code>yarn add regexcraft</code>
+      </pre>
+
+      <h2 className="text-2xl font-semibold mb-4">Getting Started</h2>
+      <p className="mb-4">
+        After installation, you can start using RegexCraft in your project.
+        Here’s a quick example:
+      </p>
+      <pre className="bg-gray-100 p-4 rounded-md mb-4">
+        <code>
+          {`import RegexCraft from 'regexcraft';
+
+const validator = new RegexCraft()
+  .hasMinLength(8)
+  .hasUpperCase(1)
+  .hasNumber(1)
+  .testOne('MyPassword1!');
+
+console.log(validator); // { value: 'MyPassword1!', isValid: true, failedRequirements: [] }
+`}
+        </code>
+      </pre>
+
+      <h2 className="text-2xl font-semibold mb-4">Learn More</h2>
+      <p>
+        Explore the{" "}
+        <a href="/examples" className="text-blue-500 underline">
+          Examples
+        </a>{" "}
+        page to see RegexCraft in action!
+      </p>
     </div>
   );
 };
