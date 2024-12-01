@@ -13,6 +13,11 @@ const validator = new RegexCraft()
   .usePreset('password', 'high')
   .testOne('MyStr0ng@Pass');
     `,
+    log: `{
+  value: 'MyStr0ng@Pass',
+  isValid: true,
+  failedRequirements: []
+}`,
   },
   {
     title: "Username Validation",
@@ -22,6 +27,11 @@ const usernameValidator = new RegexCraft()
   .usePreset('username', 'standard')
   .testOne('user_name123');
     `,
+    log: `{
+  value: 'user_name123',
+  isValid: true,
+  failedRequirements: []
+}`,
   },
   {
     title: "Email Validation",
@@ -31,6 +41,11 @@ const emailValidator = new RegexCraft()
   .isEmail()
   .testOne('user@example.com');
     `,
+    log: `{
+  value: 'user@example.com',
+  isValid: true,
+  failedRequirements: []
+}`,
   },
   {
     title: "Phone Number Validation",
@@ -40,6 +55,70 @@ const phoneValidator = new RegexCraft()
   .isPhone('US')
   .testOne('+1234567890');
     `,
+    log: `{
+  value: '+1234567890',
+  isValid: true,
+  failedRequirements: []
+}`,
+  },
+  {
+    title: "Minimum Length Validation",
+    description: "Ensure input meets minimum length requirements.",
+    code: `
+const minLengthValidator = new RegexCraft()
+  .hasMinLength(8)
+  .testOne('Short');
+    `,
+    log: `{
+  value: 'Short',
+  isValid: false,
+  failedRequirements: ['Minimum length of 8 characters']
+}`,
+  },
+  {
+    title: "Maximum Length Validation",
+    description: "Ensure input does not exceed maximum length.",
+    code: `
+const maxLengthValidator = new RegexCraft()
+  .hasMaxLength(10)
+  .testOne('This is a long string');
+    `,
+    log: `{
+  value: 'This is a long string',
+  isValid: false,
+  failedRequirements: ['Maximum length of 10 characters']
+}`,
+  },
+  {
+    title: "Exact Length Validation",
+    description: "Ensure input has an exact length.",
+    code: `
+const exactLengthValidator = new RegexCraft()
+  .hasExactLength(5)
+  .testOne('Hello');
+    `,
+    log: `{
+  value: 'Hello',
+  isValid: true,
+  failedRequirements: []
+}`,
+  },
+  {
+    title: "Character Requirements",
+    description: "Ensure input contains specific characters.",
+    code: `
+const characterValidator = new RegexCraft()
+  .hasUpperCase(1)
+  .hasLowerCase(1)
+  .hasNumber(1)
+  .hasSpecialCharacter(1)
+  .testOne('Password1!');
+    `,
+    log: `{
+  value: 'Password1!',
+  isValid: true,
+  failedRequirements: []
+}`,
   },
 ];
 
@@ -53,6 +132,8 @@ const Examples = () => {
             <h2 className="text-xl font-semibold mb-2">{example.title}</h2>
             <p className="text-gray-600 mb-4">{example.description}</p>
             <CodeBlock code={example.code} />
+            <h3 className="text-lg font-semibold mt-4">Log Output:</h3>
+            <CodeBlock code={example.log} />
           </div>
         ))}
       </div>
