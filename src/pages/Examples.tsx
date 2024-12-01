@@ -6,14 +6,18 @@ const examples = [
     title: "Password Validation in React",
     description: "Validate password strength in a React component.",
     code: `
-import React, { useState } from 'react';
-import RegexCraft from 'regexcraft';
+import { useState } from "react";
+import RegexCraft from "regexcraft";
 
 const PasswordValidator = () => {
-  const [password, setPassword] = useState('');
-  const validator = new RegexCraft().usePreset('password', 'high');
+  const [password, setPassword] = useState("");
 
-  const isValid = validator.testOne(password).isValid;
+  // Initialize RegexCraft with the "high" password preset
+  const validator = new RegexCraft().usePreset("password", "high");
+  console.log(validator);
+
+  // Use testOne for individual password strings
+  const isValid = validator.testOne(password);
 
   return (
     <div>
@@ -23,11 +27,19 @@ const PasswordValidator = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter password"
       />
-      <p>{isValid ? 'Valid Password' : 'Invalid Password'}</p>
+      
+      <p>{isValid.isValid ? "Valid Password" : "Invalid Password"}</p>
+      {!isValid.isValid && (
+        <ul>
+          {isValid.failedRequirements.map((req, index) => (
+            <li key={index}>{req}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
-    `,
+   `,
   },
   {
     title: "Email Validation in React",
