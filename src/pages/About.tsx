@@ -1,3 +1,4 @@
+import BottomNavigation from "../components/BottomNavigation";
 import HelmetWrapper from "../components/HelmetWrapper";
 const About = () => {
   return (
@@ -56,6 +57,7 @@ const About = () => {
           to see RegexCraft in action!
         </p>
       </div>
+      <BottomNavigation backLink="playground" />
     </>
   );
 };

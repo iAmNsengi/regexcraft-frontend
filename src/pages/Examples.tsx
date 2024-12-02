@@ -1,4 +1,5 @@
 // src/pages/Examples/Examples.tsx
+import BottomNavigation from "../components/BottomNavigation";
 import CodeBlock from "../components/CodeBlock";
 import HelmetWrapper from "../components/HelmetWrapper";
 
@@ -353,6 +354,7 @@ const Examples = () => {
           ))}
         </div>
       </div>
+      <BottomNavigation backLink="home" frontLink="playground" />
     </>
   );
 };
