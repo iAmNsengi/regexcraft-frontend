@@ -3,7 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="flex items-center overflow-x-scroll lg:overflow-hidden lg:flex-col lg:space-y-4 ">
+    <nav className="flex items-center justify-center lg:overflow-hidden lg:flex-col lg:space-y-4 w-screen -ml-5 lg:ml lg:w-full">
+      <img
+        className="h-10 w-10 hidden md:block scale-125 lg:mb-10 lg:mt-5 lg:h-20 lg:w-20"
+        src="/regex-craft-logo.png"
+        alt="Regex Craft Logo"
+      />
       <NavLink
         to="/"
         className="px-1 md:px-4 py-2 rounded-md hover:bg-gray-200"
