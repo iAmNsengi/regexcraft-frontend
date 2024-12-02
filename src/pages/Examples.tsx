@@ -1,5 +1,6 @@
 // src/pages/Examples/Examples.tsx
 import CodeBlock from "../components/CodeBlock";
+import HelmetWrapper from "../components/HelmetWrapper";
 
 const examples = [
   {
@@ -335,18 +336,24 @@ console.log(result); // { value: 'Password1!', isValid: true, failedRequirements
 
 const Examples = () => {
   return (
-    <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8">Usage Examples</h1>
-      <div className="space-y-12">
-        {examples.map((example, index) => (
-          <div key={index} className="border rounded-lg p-6 bg-white shadow-md">
-            <h2 className="text-xl font-semibold mb-2">{example.title}</h2>
-            <p className="text-gray-600 mb-4">{example.description}</p>
-            <CodeBlock code={example.code} />
-          </div>
-        ))}
+    <>
+      <HelmetWrapper title="How To Use" />
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8">Usage Examples</h1>
+        <div className="space-y-12">
+          {examples.map((example, index) => (
+            <div
+              key={index}
+              className="border rounded-lg p-6 bg-white shadow-md"
+            >
+              <h2 className="text-xl font-semibold mb-2">{example.title}</h2>
+              <p className="text-gray-600 mb-4">{example.description}</p>
+              <CodeBlock code={example.code} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
