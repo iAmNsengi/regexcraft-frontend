@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CodeBlock from "../components/CodeBlock";
 
 const Home = () => {
@@ -55,9 +56,9 @@ console.log(validator); // { value: 'MyPassword1!', isValid: true, failedRequire
       <h2 className="text-2xl font-semibold mb-4 py-2">Learn More</h2>
       <p>
         Explore the{" "}
-        <a href="/examples" className="text-blue-500 underline">
+        <Link to="/examples" className="text-blue-500 underline">
           Examples
-        </a>{" "}
+        </Link>{" "}
         page to see RegexCraft in action!
       </p>
     </div>
