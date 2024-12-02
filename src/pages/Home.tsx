@@ -53,6 +53,27 @@ console.log(validator); // { value: 'MyPassword1!', isValid: true, failedRequire
         language="typescript"
       />
 
+      <h2 className="text-2xl font-semibold mb-4 py-4">Building Your Regex</h2>
+      <p className="mb-4">
+        You can use the .build() method to generate your custom regex. Here's a
+        quick example:
+      </p>
+
+      <CodeBlock
+        code={`
+import RegexCraft from 'regexcraft';
+
+const customRegex = new RegexCraft()
+  .hasMinLength(8)
+  .hasUpperCase(1)
+  .hasNumber(1)
+  .build();
+
+console.log(customRegex); 
+// /^(?=^.{8,}$)(?=(?=(?:.*[A-Z]){1}))(?=(?=(?:.*\\d){1})).+$/
+`}
+        language="typescript"
+      />
       <h2 className="text-2xl font-semibold mb-4 py-2">Learn More</h2>
       <p>
         Explore the{" "}
