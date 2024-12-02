@@ -9,7 +9,7 @@ const BottomNavigation = ({
   frontLink?: string;
 }) => {
   return (
-    <div className="flex items-center justify-around py-7">
+    <div className="flex items-center justify-between lg:justify-around py-7">
       <div className="font-bold underline">
         <Link
           to={`/${backLink}`}
