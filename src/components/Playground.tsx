@@ -51,8 +51,8 @@ const Playground = () => {
   };
 
   return (
-    <>
-      <div className="mx-auto max-w-4xl">
+    <div className="px-4 lg:px-0">
+      <div className="max-w-2xl mx-auto ">
         <h1 className="mb-8 text-3xl font-bold">RegexCraft Playground</h1>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -138,7 +138,7 @@ const Playground = () => {
         </div>
       </div>
       <BottomNavigation backLink="examples" frontLink="about" />
-    </>
+    </div>
   );
 };
 
