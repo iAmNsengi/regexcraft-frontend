@@ -4,16 +4,16 @@ const About = () => {
   return (
     <>
       <HelmetWrapper title="About" />
-      <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-6">About RegexCraft</h1>
-        <p className="text-lg text-gray-600 mb-4">
+      <div className="mx-auto max-w-4xl p-6">
+        <h1 className="mb-6 text-4xl font-bold">About RegexCraft</h1>
+        <p className="mb-4 text-lg text-gray-600">
           RegexCraft is a powerful utility class designed to simplify the
           process of building and managing regular expressions. With its fluent,
           chainable API, developers can easily create complex regex patterns
           without the hassle of manual string manipulation.
         </p>
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Meet the Developer</h2>
-        <p className="text-lg text-gray-600 mb-4">
+        <h2 className="mb-4 mt-8 text-2xl font-semibold">Meet the Developer</h2>
+        <p className="mb-4 text-lg text-gray-600">
           Developed by{" "}
           <a
             href="https://nsengixp.onrender.com/"
@@ -25,10 +25,10 @@ const About = () => {
           validation and testing. Eliezer is passionate about creating tools
           that enhance developer productivity and streamline workflows.
         </p>
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="mb-4 mt-8 text-2xl font-semibold">
           Why Use RegexCraft?
         </h2>
-        <ul className="list-disc list-inside text-gray-600">
+        <ul className="list-inside list-disc text-gray-600">
           <li>
             🔍 **Easy to Use**: Build complex regex patterns with a simple,
             chainable API.
@@ -46,8 +46,8 @@ const About = () => {
             examples to help you get started quickly.
           </li>
         </ul>
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Get Started</h2>
-        <p className="text-lg text-gray-600 mb-4">
+        <h2 className="mb-4 mt-8 text-2xl font-semibold">Get Started</h2>
+        <p className="mb-4 text-lg text-gray-600">
           Whether you're a beginner or an experienced developer, RegexCraft is
           here to help you manage your regular expressions with ease. Check out
           the{" "}

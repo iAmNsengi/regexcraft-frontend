@@ -31,7 +31,7 @@ const CodeBlock = ({
     <div className="relative">
       <button
         onClick={copyToClipboard}
-        className="absolute top-2 right-2 p-1 bg-blue-500 text-white rounded text-xs"
+        className="absolute right-2 top-2 rounded bg-blue-500 p-1 text-xs text-white"
       >
         {buttonText}
       </button>
@@ -41,7 +41,7 @@ const CodeBlock = ({
         language={language}
       >
         {({ tokens, getLineProps, getTokenProps }) => (
-          <pre className="overflow-x-auto rounded-lg p-4 bg-[#011627]">
+          <pre className="overflow-x-auto rounded-lg bg-[#011627] p-4">
             {tokens.map((line, i) => (
               <div
                 key={i}
@@ -49,7 +49,7 @@ const CodeBlock = ({
                 className="table-row"
               >
                 {showLineNumbers && (
-                  <span className="table-cell text-right pr-4 select-none opacity-50 text-white">
+                  <span className="table-cell select-none pr-4 text-right text-white opacity-50">
                     {i + 1}
                   </span>
                 )}

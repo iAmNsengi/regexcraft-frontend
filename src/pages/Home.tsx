@@ -5,15 +5,15 @@ import BottomNavigation from "../components/BottomNavigation";
 const Home = () => {
   return (
     <>
-      <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-4xl font-bold mb-4">Welcome to RegexCraft 🛠️</h1>
-        <p className="text-lg text-gray-700 mb-6">
+      <div className="mx-auto max-w-4xl p-6">
+        <h1 className="mb-4 text-4xl font-bold">Welcome to RegexCraft 🛠️</h1>
+        <p className="mb-6 text-lg text-gray-700">
           RegexCraft is a powerful utility class for building and managing
           regular expressions with a fluent, chainable API.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4">Features</h2>
-        <ul className="list-disc list-inside mb-6">
+        <h2 className="mb-4 text-2xl font-semibold">Features</h2>
+        <ul className="mb-6 list-inside list-disc">
           <li>🔗 Chainable API for building complex patterns</li>
           <li>📝 Built-in validation presets for common use cases</li>
           <li>🎯 Custom error messages for each validation rule</li>
@@ -26,7 +26,7 @@ const Home = () => {
           <li>🛠️ Easy integration with forms and validation libraries</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mb-4">Installation</h2>
+        <h2 className="mb-4 text-2xl font-semibold">Installation</h2>
         <p className="mb-4">
           To install RegexCraft, you can use npm or yarn. Run one of the
           following commands in your project directory:
@@ -35,7 +35,7 @@ const Home = () => {
         <p className="py-2">or if you use yarn:</p>
         <CodeBlock code={`yarn add regexcraft`} language="bash" />
 
-        <h2 className="text-2xl font-semibold mb-4 py-4">Getting Started</h2>
+        <h2 className="mb-4 py-4 text-2xl font-semibold">Getting Started</h2>
         <p className="mb-4">
           After installation, you can start using RegexCraft in your project.
           Here’s a quick example:
@@ -55,7 +55,7 @@ console.log(validator); // { value: 'MyPassword1!', isValid: true, failedRequire
           language="typescript"
         />
 
-        <h2 className="text-2xl font-semibold mb-4 py-4">
+        <h2 className="mb-4 py-4 text-2xl font-semibold">
           Building Your Regex
         </h2>
         <p className="mb-4">
@@ -78,7 +78,7 @@ console.log(customRegex);
 `}
           language="typescript"
         />
-        <h2 className="text-2xl font-semibold mb-4 py-2">Learn More</h2>
+        <h2 className="mb-4 py-2 text-2xl font-semibold">Learn More</h2>
         <p>
           Explore the{" "}
           <Link to="/examples" className="text-blue-500 underline">

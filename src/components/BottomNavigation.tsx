@@ -9,11 +9,11 @@ const BottomNavigation = ({
   frontLink?: string;
 }) => {
   return (
-    <div className="flex items-center justify-between lg:justify-around py-7">
+    <div className="flex items-center justify-between py-7 lg:justify-around">
       <div className="font-bold underline">
         <Link
           to={`/${backLink}`}
-          className="font-bold underline flex flex-col items-start text-gray-900"
+          className="flex flex-col items-start font-bold text-gray-900 underline"
         >
           {backLink && (
             <>
@@ -26,7 +26,7 @@ const BottomNavigation = ({
       <div>
         <Link
           to={`/${frontLink}`}
-          className="font-bold underline flex flex-col items-end text-gray-900"
+          className="flex flex-col items-end font-bold text-gray-900 underline"
         >
           {frontLink && (
             <>
