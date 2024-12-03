@@ -337,25 +337,43 @@ console.log(result); // { value: 'Password1!', isValid: true, failedRequirements
 
 const Examples = () => {
   return (
-    <>
-      <HelmetWrapper title="How To Use" />
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Usage Examples</h1>
-        <div className="space-y-12">
-          {examples.map((example, index) => (
-            <div
-              key={index}
-              className="border rounded-lg p-6 bg-white shadow-md"
-            >
-              <h2 className="text-xl font-semibold mb-2">{example.title}</h2>
-              <p className="text-gray-600 mb-4">{example.description}</p>
-              <CodeBlock code={example.code} />
-            </div>
-          ))}
+    <div className="flex">
+      <div className="p-4 md:p-8">
+        <HelmetWrapper title="How To Use" />
+        <div className="mx-auto max-w-4xl">
+          <h1 className="mb-8 text-3xl font-bold">Usage Examples</h1>
+          <div className="space-y-12">
+            {examples.map((example, index) => (
+              <div
+                key={index}
+                id={example.title.toLowerCase().replace(/\s+/g, "-")}
+                className="rounded-lg border bg-white p-6 shadow-md"
+              >
+                <h2 className="mb-2 text-xl font-semibold">{example.title}</h2>
+                <p className="mb-4 text-gray-600">{example.description}</p>
+                <CodeBlock code={example.code} />
+              </div>
+            ))}
+          </div>
         </div>
+        <BottomNavigation backLink="home" frontLink="playground" />
       </div>
-      <BottomNavigation backLink="home" frontLink="playground" />
-    </>
+      <aside className="hide-scrollbar hidden lg:fixed lg:right-0 lg:block lg:h-[100vh] lg:w-80 lg:overflow-y-auto lg:px-6 lg:py-16">
+        <ul>
+          <h1 className="mb-5 text-2xl font-semibold">Quick nav</h1>
+          {examples.map((example) => (
+            <li key={example.title} className="mb-4">
+              <a
+                href={`#${example.title.toLowerCase().replace(/\s+/g, "-")}`}
+                className="hover:text-blue-500 hover:underline"
+              >
+                {example.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
   );
 };
 
