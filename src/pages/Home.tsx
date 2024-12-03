@@ -4,7 +4,7 @@ import BottomNavigation from "../components/BottomNavigation";
 
 const Home = () => {
   return (
-    <>
+    <div className="px-5 lg:px-0">
       <div className="mx-auto max-w-4xl p-6">
         <h1 className="mb-4 text-4xl font-bold">Welcome to RegexCraft 🛠️</h1>
         <p className="mb-6 text-lg text-gray-700">
@@ -88,7 +88,7 @@ console.log(customRegex);
         </p>
       </div>
       <BottomNavigation frontLink="examples" />
-    </>
+    </div>
   );
 };
 
