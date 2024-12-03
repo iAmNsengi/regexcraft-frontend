@@ -337,8 +337,8 @@ console.log(result); // { value: 'Password1!', isValid: true, failedRequirements
 
 const Examples = () => {
   return (
-    <div className="flex">
-      <div className="p-4 md:p-8">
+    <div className="flex gap-5 border border-black p-4 md:p-8 lg:ml-[15vw]">
+      <div className="w-full lg:w-[70%]">
         <HelmetWrapper title="How To Use" />
         <div className="mx-auto max-w-4xl">
           <h1 className="mb-8 text-3xl font-bold">Usage Examples</h1>
@@ -358,7 +358,7 @@ const Examples = () => {
         </div>
         <BottomNavigation backLink="home" frontLink="playground" />
       </div>
-      <aside className="hide-scrollbar hidden lg:fixed lg:right-0 lg:block lg:h-[100vh] lg:w-80 lg:overflow-y-auto lg:px-6 lg:py-16">
+      <aside className="hidden lg:block lg:w-[30%]">
         <ul>
           <h1 className="mb-5 text-2xl font-semibold">Quick nav</h1>
           {examples.map((example) => (
