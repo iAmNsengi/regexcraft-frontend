@@ -1,4 +1,5 @@
 // src/pages/Examples/Examples.tsx
+import { useLocation } from "react-router-dom";
 import BottomNavigation from "../components/BottomNavigation";
 import CodeBlock from "../components/CodeBlock";
 import HelmetWrapper from "../components/HelmetWrapper";
@@ -336,41 +337,54 @@ console.log(result); // { value: 'Password1!', isValid: true, failedRequirements
 ];
 
 const Examples = () => {
+  const currentSection = useLocation().hash;
   return (
-    <div className="flex gap-5 border border-black p-4 md:p-8 lg:ml-[15vw]">
+    <div className="flex gap-5 p-4 md:p-8 lg:ml-[15vw]">
       <div className="w-full lg:w-[70%]">
         <HelmetWrapper title="How To Use" />
         <div className="mx-auto max-w-4xl">
           <h1 className="mb-8 text-3xl font-bold">Usage Examples</h1>
           <div className="space-y-12">
-            {examples.map((example, index) => (
-              <div
-                key={index}
-                id={example.title.toLowerCase().replace(/\s+/g, "-")}
-                className="rounded-lg border bg-white p-6 shadow-md"
-              >
-                <h2 className="mb-2 text-xl font-semibold">{example.title}</h2>
-                <p className="mb-4 text-gray-600">{example.description}</p>
-                <CodeBlock code={example.code} />
-              </div>
-            ))}
+            {examples.map((example, index) => {
+              const sectionHeading = example.title
+                .toLowerCase()
+                .replace(/\s+/g, "-");
+              return (
+                <div
+                  key={index}
+                  id={sectionHeading}
+                  className="rounded-lg border bg-white p-6 shadow-md"
+                >
+                  <h2 className="mb-2 text-xl font-semibold">
+                    {example.title}
+                  </h2>
+                  <p className="mb-4 text-gray-600">{example.description}</p>
+                  <CodeBlock code={example.code} />
+                </div>
+              );
+            })}
           </div>
         </div>
         <BottomNavigation backLink="home" frontLink="playground" />
       </div>
-      <aside className="hidden lg:block lg:w-[30%]">
-        <ul>
+      <aside className="fixed right-8 top-0 hidden py-10 lg:block lg:w-[18%]">
+        <ul className="hide-scrollbar h-[100vh] overflow-y-scroll">
           <h1 className="mb-5 text-2xl font-semibold">Quick nav</h1>
-          {examples.map((example) => (
-            <li key={example.title} className="mb-4">
-              <a
-                href={`#${example.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="hover:text-blue-500 hover:underline"
-              >
-                {example.title}
-              </a>
-            </li>
-          ))}
+          {examples.map((example) => {
+            const sectionHeading = example.title
+              .toLowerCase()
+              .replace(/\s+/g, "-");
+            return (
+              <li key={example.title} className="mb-4">
+                <a
+                  href={`#${sectionHeading}`}
+                  className={`hover:text-blue-500 hover:underline ${currentSection === `#${sectionHeading}` ? "text-blue-500 underline" : ""}`}
+                >
+                  {example.title}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </aside>
     </div>
