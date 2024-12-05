@@ -370,7 +370,7 @@ const Examples = () => {
               <li key={example.title} className="mb-4">
                 <a
                   href={`#${sectionHeading}`}
-                  className={`hover:text-blue-500 hover:underline ${currentSection === `#${sectionHeading}` ? "text-blue-500 underline" : ""}`}
+                  className={`hover:text-blue-500`}
                 >
                   {example.title}
                 </a>
