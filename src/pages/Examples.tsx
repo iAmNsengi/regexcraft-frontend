@@ -1,4 +1,3 @@
-// src/pages/Examples/Examples.tsx
 import { useLocation } from "react-router-dom";
 import BottomNavigation from "../components/BottomNavigation";
 import CodeBlock from "../components/CodeBlock";
@@ -338,6 +337,7 @@ console.log(result); // { value: 'Password1!', isValid: true, failedRequirements
 
 const Examples = () => {
   const currentSection = useLocation().hash;
+
   return (
     <div className="px-4 lg:px-0">
       <HelmetWrapper title="How To Use" />

@@ -5,3 +5,6 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Hides the scrollbar for Webkit-based browsers */
 }
+html {
+  scroll-behavior: smooth;
+}
