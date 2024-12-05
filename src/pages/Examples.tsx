@@ -347,6 +347,9 @@ const Examples = () => {
           {examples.map((example, index) => (
             <div
               key={index}
+              id={`${example.title
+              .toLowerCase()
+              .replace(/\s+/g, "-")}`}
               className="border rounded-lg p-6 bg-white shadow-md"
             >
               <h2 className="text-xl font-semibold mb-2">{example.title}</h2>
