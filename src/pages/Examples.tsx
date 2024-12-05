@@ -1,4 +1,5 @@
 // src/pages/Examples/Examples.tsx
+import { useLocation } from "react-router-dom";
 import BottomNavigation from "../components/BottomNavigation";
 import CodeBlock from "../components/CodeBlock";
 import HelmetWrapper from "../components/HelmetWrapper";
@@ -336,6 +337,7 @@ console.log(result); // { value: 'Password1!', isValid: true, failedRequirements
 ];
 
 const Examples = () => {
+  const currentSection = useLocation().hash;
   return (
     <div className="px-4 lg:px-0">
       <HelmetWrapper title="How To Use" />
@@ -354,6 +356,26 @@ const Examples = () => {
           ))}
         </div>
       </div>
+      <aside className="fixed right-8 top-0 hidden py-10 lg:block lg:w-[18%]">
+        <ul className="hide-scrollbar h-[100vh] overflow-y-scroll">
+          <h1 className="mb-5 text-2xl font-semibold">Quick nav</h1>
+          {examples.map((example) => {
+            const sectionHeading = example.title
+              .toLowerCase()
+              .replace(/\s+/g, "-");
+            return (
+              <li key={example.title} className="mb-4">
+                <a
+                  href={`#${sectionHeading}`}
+                  className={`hover:text-blue-500 hover:underline ${currentSection === `#${sectionHeading}` ? "text-blue-500 underline" : ""}`}
+                >
+                  {example.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </aside>
       <BottomNavigation backLink="home" frontLink="playground" />
     </div>
   );
