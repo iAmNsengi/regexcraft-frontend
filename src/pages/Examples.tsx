@@ -56,7 +56,7 @@ const Examples = () => {
           ))}
         </div>
       </div>
-      <aside className="fixed right-8 top-0 hidden py-10 lg:block lg:w-[18%]">
+      <aside className="fixed right-8 top-0 hidden py-10 xl:block lg:w-[18%]">
         <ul className="hide-scrollbar h-[100vh] overflow-y-scroll">
           <h1 className="mb-5 text-2xl font-semibold">Quick nav</h1>
           {examples.map((example) => {
