@@ -2,9 +2,9 @@ import BottomNavigation from "../components/BottomNavigation";
 import HelmetWrapper from "../components/HelmetWrapper";
 const About = () => {
   return (
-    <>
+    <div className="px-4 lg:px-0">
       <HelmetWrapper title="About" />
-      <div className="mx-auto max-w-4xl p-6">
+      <div className="max-w-4xl mx-auto ">
         <h1 className="mb-6 text-4xl font-bold">About RegexCraft</h1>
         <p className="mb-4 text-lg text-gray-600">
           RegexCraft is a powerful utility class designed to simplify the
@@ -58,7 +58,7 @@ const About = () => {
         </p>
       </div>
       <BottomNavigation backLink="playground" />
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="lg:ml -ml-5 flex w-screen items-center justify-center lg:w-full lg:flex-col lg:space-y-4 lg:overflow-hidden">
+    <nav className="xl:-ml-5 flex w-screen items-center justify-center xl:w-full xl:flex-col xl:space-y-4 xl:overflow-hidden">
       <img
         className="hidden h-10 w-10 scale-125 md:block lg:mb-10 lg:mt-5 lg:h-20 lg:w-20"
         src="/regex-craft-logo.png"
