@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import BottomNavigation from "../components/BottomNavigation";
 import CodeBlock from "../components/CodeBlock";
 import HelmetWrapper from "../components/HelmetWrapper";
@@ -6,7 +6,7 @@ import { examples } from "../utils/examplesData";
 
 const Examples = () => {
   // const [currentSection, setCurrentSection] = useState("");
-  const sections = examples.map(example => example.title.toLowerCase().replace(/\s+/g, "-"));
+  // const sections = examples.map(example => example.title.toLowerCase().replace(/\s+/g, "-"));
 
   // const handleSectionClick = (section: string) => {
   //   setCurrentSection(section);
@@ -16,24 +16,24 @@ const Examples = () => {
   //   }
   // };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      sections.forEach((section) => {
-        const sectionElement = document.getElementById(section);
-        if (sectionElement) {
-          const sectionTop = sectionElement.offsetTop;
-          const sectionHeight = sectionElement.offsetHeight;
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            setCurrentSection(`#${section}`);
-          }
-        }
-      });
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     sections.forEach((section) => {
+  //       const sectionElement = document.getElementById(section);
+  //       if (sectionElement) {
+  //         const sectionTop = sectionElement.offsetTop;
+  //         const sectionHeight = sectionElement.offsetHeight;
+  //         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+  //           setCurrentSection(`#${section}`);
+  //         }
+  //       }
+  //     });
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [sections]);
 
   return (
     <div className="px-4 lg:px-0">
