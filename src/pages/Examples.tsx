@@ -5,16 +5,16 @@ import HelmetWrapper from "../components/HelmetWrapper";
 import { examples } from "../utils/examplesData";
 
 const Examples = () => {
-  const [currentSection, setCurrentSection] = useState("");
+  // const [currentSection, setCurrentSection] = useState("");
   const sections = examples.map(example => example.title.toLowerCase().replace(/\s+/g, "-"));
 
-  const handleSectionClick = (section: string) => {
-    setCurrentSection(section);
-    const sectionElement = document.getElementById(section);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const handleSectionClick = (section: string) => {
+  //   setCurrentSection(section);
+  //   const sectionElement = document.getElementById(section);
+  //   if (sectionElement) {
+  //     sectionElement.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +56,7 @@ const Examples = () => {
           ))}
         </div>
       </div>
-      <aside className="hidden right-8 top-0 py-10 xl:block lg:w-[18%]">
+      {/* <aside className="hidden right-8 top-0 py-10 xl:block lg:w-[18%]">
         <ul className="hide-scrollbar h-[100vh] overflow-y-scroll">
           <h1 className="mb-5 text-2xl font-semibold">Quick nav</h1>
           {examples.map((example) => {
@@ -74,7 +74,7 @@ const Examples = () => {
             );
           })}
         </ul>
-      </aside>
+      </aside> */}
       <BottomNavigation backLink="home" frontLink="playground" />
     </div>
   );
