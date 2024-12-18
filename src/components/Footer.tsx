@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <a href="https://nsengixp.onrender.com/" className="underline">
         Eliezer Nsengi
       </a>
-      . ©️ 2024
+      . ©️ {new Date().getFullYear()}
     </div>
   );
 };
