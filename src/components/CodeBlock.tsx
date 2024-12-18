@@ -20,7 +20,7 @@ const CodeBlock = ({
       .writeText(code.trim())
       .then(() => {
         setButtonText("Copied ✅");
-        setTimeout(() => setButtonText("Copy"), 5000);
+        setTimeout(() => setButtonText("Copy"), 2000);
       })
       .catch((err) => {
         console.error("Failed to copy: ", err);
